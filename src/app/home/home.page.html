@@ -1,20 +1,28 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Custom Modal
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+<ion-content [fullscreen]="true" >
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-button (click)="openModal()">Open Custom Modal</ion-button>
+  
+  <div class="modal" id="modal" *ngIf="customModal" (click)="closeModal()" >
+    <div class="popup_txt">
+        <p>Want to Delete?</p>
+        <br>
+        <ion-row>
+            <ion-col style="text-align: center;">
+               <p (click)="closeModal()" style="color: green;">yes</p>
+            </ion-col>
+            <ion-col style="text-align: center;">
+                <p (click)="closeModal()" style="color: red;">no</p>
+            </ion-col>
+        </ion-row>
+    </div>
+</div>
+
 </ion-content>

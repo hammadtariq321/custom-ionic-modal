@@ -7,6 +7,19 @@ import { Component } from '@angular/core';
 })
 export class HomePage {
 
+  customModal:boolean = false;
+
   constructor() {}
+
+  openModal() {
+    this.customModal = true;
+    console.log('modal Opened ')
+  }
+  
+  closeModal() {
+    this.customModal = false;
+    console.log('modal Closed ')
+
+  }
 
 }
